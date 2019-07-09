@@ -1,0 +1,13 @@
+input:checked ~ span {
+  text-decoration: line-through;
+}
+#todo{
+    background-color: lightseagreen;
+    width: 500px;
+    margin:auto;
+    padding: 30px;
+}
+h1{
+    text-align: center;
+    font-size: 42px;
+}

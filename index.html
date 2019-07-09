@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<div id="todo">
+  <h1>TODO List</h1>
+  <p>{{ remaining.length }} tâches à réaliser</p>
+  <form v-on:submit.prevent="add()">
+    <input type="text" v-model="name" />
+    <button type="submit">
+      add
+    </button>
+    <button type="button" v-if="remaining.length > 0" v-on:click="allDone()">All done</button>
+  </form>
+   <h2>Récapitulatif des tâches à effectuer</h2>
+    <ul>
+    <li v-for="todo in todos">
+      <label>
+        <input type="checkbox" v-model="todo.done" />
+        <span>{{ todo.name }}</span>
+      </label>
+      <button type="button" v-on:click="remove(todo)">
+        &times;
+      </button>
+    </li>
+  </ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+<script src="app.js"></script>
